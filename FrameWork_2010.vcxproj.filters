@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns:atg="http://atg.xbox.com" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{2f61cf97-b457-4644-8bfd-a50208d60d12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{6a3dd97c-e441-4ea1-81e6-6d677579985c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\Scene">
+      <UniqueIdentifier>{27c6409e-4d4d-4a45-80c3-f20d731bba8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\Image">
+      <UniqueIdentifier>{40538f8a-ccb9-4143-8ecb-4529a6118dec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\Image\Load">
+      <UniqueIdentifier>{abee2166-7169-49b6-9156-f438cd4be74a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\Image\UIRender">
+      <UniqueIdentifier>{cf9461b7-f3b1-496f-8e7e-7f8416681a83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\Image\Render">
+      <UniqueIdentifier>{9d73b43d-90b2-4842-aee1-1d94d61c9e9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{1c28b5ea-35ca-42b9-89d2-b9e0fdab5aac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ㅇㅅㅇ">
+      <UniqueIdentifier>{78f71db8-7ce8-4fbb-84f1-42f0ad9d3881}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ㅇㅅㅇ\DXUT">
+      <UniqueIdentifier>{a43c5c25-0e86-4a20-b64a-883785ff74fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ㅇㅅㅇ\Resource Files">
+      <UniqueIdentifier>{8e114980-c1a3-4ada-ad7c-83caadf5daeb}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="ㅇㅅㅇ\Shaders">
+      <UniqueIdentifier>{2c3d4c8c-5d1a-459a-a05a-a4e4b608a44e}</UniqueIdentifier>
+      <Extensions>fx;fxh;hlsl</Extensions>
+    </Filter>
+    <Filter Include="Manager\Cam">
+      <UniqueIdentifier>{b0748607-b69c-4daf-94e7-5fce383a8fbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\Object">
+      <UniqueIdentifier>{e88202d0-9ccd-48f5-b0eb-8f121b0bc29b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DXUT\Optional\directx.ico">
+      <Filter>ㅇㅅㅇ\Resource Files</Filter>
+    </None>
+    <ClInclude Include="DXUT\Core\DXUT.h">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Core\DXUTenum.h">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Core\DXUTmisc.h">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClInclude>
+    <ClCompile Include="DXUT\Core\DXUT.cpp">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Core\DXUTenum.cpp">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Core\DXUTmisc.cpp">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClCompile>
+    <ClInclude Include="DXUT\Optional\DXUTcamera.h">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\DXUTgui.h">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\DXUTres.h">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\DXUTsettingsdlg.h">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\SDKmesh.h">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\SDKmisc.h">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClInclude>
+    <ClCompile Include="DXUT\Optional\DXUTcamera.cpp">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\DXUTgui.cpp">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\DXUTres.cpp">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\DXUTsettingsdlg.cpp">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\SDKmesh.cpp">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\SDKmisc.cpp">
+      <Filter>ㅇㅅㅇ\DXUT</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Scene.cpp">
+      <Filter>Manager\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Manager\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameWork.cpp" />
+    <ClCompile Include="ImageLoad.cpp">
+      <Filter>Manager\Image\Load</Filter>
+    </ClCompile>
+    <ClCompile Include="UIRenderManager.cpp">
+      <Filter>Manager\Image\UIRender</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderManager.cpp">
+      <Filter>Manager\Image\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="CamManager.cpp">
+      <Filter>Manager\Cam</Filter>
+    </ClCompile>
+    <ClCompile Include="EXScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Manager\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>Manager\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="EXObject.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="SmallMap.cpp" />
+    <ClCompile Include="Math.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CLInclude Include="resource.h">
+      <Filter>ㅇㅅㅇ\Resource Files</Filter>
+    </CLInclude>
+    <ResourceCompile Include="FrameWork.rc">
+      <Filter>ㅇㅅㅇ\Resource Files</Filter>
+    </ResourceCompile>
+    <ClInclude Include="Main.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Scene.h">
+      <Filter>Manager\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton.h" />
+    <ClInclude Include="SceneManager.h">
+      <Filter>Manager\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageLoad.h">
+      <Filter>Manager\Image\Load</Filter>
+    </ClInclude>
+    <ClInclude Include="UIRenderManager.h">
+      <Filter>Manager\Image\UIRender</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderManager.h">
+      <Filter>Manager\Image\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="CamManager.h">
+      <Filter>Manager\Cam</Filter>
+    </ClInclude>
+    <ClInclude Include="EXScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Manager\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>Manager\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="EXObject.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="SmallMap.h" />
+    <ClInclude Include="Math.h" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
