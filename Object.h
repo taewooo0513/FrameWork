@@ -1,11 +1,17 @@
 #pragma once
+	enum Tag
+	{
+		Block,
+		Obj_End
+	}; 
 class Object abstract
 {
 private:
-	string tag = "None";
 	RECT rt;
 	bool DelObj =false;
+	Vec2 Pos;
 public:
+	vector<Tag> CollisionWith;
 	Object() {};
 	virtual ~Object() {};
 public:
@@ -15,6 +21,8 @@ public:
 	virtual void Collision(Object * obj) PURE;
 	
 public:
+	Vec2 GetPos() { return Pos; }
+	void SetPos(Vec2 pos) { Pos = pos; }
 	void DestroyObj() { DelObj = true; }
 	bool ObjDel() { return DelObj; }
 	RECT GetRect() { return rt; }

@@ -13,12 +13,12 @@ EXObject::~EXObject()
 
 void EXObject::Update()
 {
-	
+	SetPos(pos);
 }
 
 void EXObject::Render()
 {
-	RENDER->Render(image,pos,Vec2(Sclae, Sclae));
+	RENDER->Render(image,GetPos(),Vec2(Sclae, Sclae));
 }
 
 void EXObject::UIRender()

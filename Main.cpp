@@ -27,7 +27,6 @@ void Main::Update()
 
 void Main::Render()
 {
-
 	SCENE->Render();
 	OBJ->Render();
 	UIRENDER->Begin();

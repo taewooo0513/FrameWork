@@ -3,8 +3,7 @@
 #include "EXObject.h"
 SmallMap::SmallMap()
 {
-	timer = new CDXUTTimer;
-	timer->Start();
+	
 	
 }
 
@@ -16,7 +15,7 @@ void SmallMap::AddMap(int seed,string name)
 {
 	for (int i = 0; i < 21; i++)
 	{
-		Smooth[i] = Vec2(i* 200,MATH->SmoothNoise(seed));
+		Smooth[i] = Vec2(-1000+i* 100,MATH->SmoothNoise(seed+i));
 	}
 	for (int i = 0; i < 21; i++)
 	{
@@ -26,24 +25,21 @@ void SmallMap::AddMap(int seed,string name)
 
 			for (int j = 0; j < 20; j++)
 			{
-				D3DXVec2Hermite(&MapPos[i], &Smooth[i]
+				D3DXVec2Hermite(&MapPos[i][j], &Smooth[i]
 					, &(Smooth[i + 1] -  Smooth[i]) 
 					, & Smooth[i + 1] 
 					, &(Smooth[i + 2] - Smooth[i + 1] )
 					, j * 0.05);
+
 			}
 		}
 	}
 
-	for (int i = 0; i < 4200; )
+	for (int i = 0; i < 21; )
 	{
-		if (timer->GetTime() > 0.0001)
-		{
-		OBJ->AddObject(new EXObject(MapPos[i]));
-		i++;
-		timer->Reset();
-
-		}
+		for(int j = 0 ; j < 20 ; j ++)
+		OBJ->AddObject(new EXObject(MapPos[i][j]),0);
+		i++; //еб©Уеб©Уеб©Уеб©Уеб©Уеб©Уеб©Уеб©Уеб©Уеб©У
 	}
-
+	
 }

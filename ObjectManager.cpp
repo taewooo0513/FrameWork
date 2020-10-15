@@ -10,11 +10,11 @@ ObjectManager::~ObjectManager()
 	Release();
 }
 
-Object * ObjectManager::AddObject(Object * obj)
+Object * ObjectManager::AddObject(Object * obj,int tag)
 {
 	if (obj)
 	{
-		L_Obj.push_back(obj);
+		L_Obj[tag].push_back(obj);
 	}
 	return obj;
 }
@@ -22,50 +22,84 @@ Object * ObjectManager::AddObject(Object * obj)
 void ObjectManager::Update()
 {
 	RECT rt = { 0,0,0,0 };
-	for (auto iter = L_Obj.begin(); iter != L_Obj.end();)
+	Vec2 pos;
+	for (int Tag = 0; Tag < Obj_End; Tag++)
 	{
-		(*iter)->Update();
-		if ((*iter)->GetRect().left != rt.left && (*iter)->GetRect().bottom != rt.bottom && (*iter)->GetRect().right != rt.right && (*iter)->GetRect().top != rt.top)
+		for (auto iter = L_Obj[Tag].begin(); iter != L_Obj[Tag].end();)
 		{
-			for (auto& _iter : L_Obj)
+			if ((*iter)->GetPos() != pos)
 			{
-				if (IntersectRect(&rt, &(*iter)->GetRect(), &_iter->GetRect()))
+
+				if ((*iter)->GetPos().x < CAM->GetCamPos().x + WINSIZEX / 2 && (*iter)->GetPos().x > CAM->GetCamPos().x - WINSIZEX / 2)
 				{
-					(*iter)->Collision(_iter);
+					if ((*iter)->GetRect().left != rt.left && (*iter)->GetRect().bottom != rt.bottom && (*iter)->GetRect().right != rt.right && (*iter)->GetRect().top != rt.top)
+					{
+						for (auto& CollTag : (*iter)->CollisionWith)
+						{
+							for (auto& _iter : L_Obj[CollTag])
+							{
+								if (IntersectRect(&rt, &(*iter)->GetRect(), &_iter->GetRect()))
+								{
+									(*iter)->Collision(_iter);
+								}
+							}
+						}
+					}
 				}
 			}
+			(*iter)->Update();
+
+			if ((*iter)->ObjDel() == true)
+			{
+				delete(*iter);
+				iter = L_Obj[Tag].erase(iter);
+			}
+			else
+				iter++;
 		}
-		if ((*iter)->ObjDel() == true)
-		{
-			delete(*iter);
-			iter = L_Obj.erase(iter);
-		}
-		else
-			iter++;
 	}
 }
 
 void ObjectManager::Render()
 {
-	for (auto iter : L_Obj)
+	Vec2 pos;
+	for (int Tag = 0; Tag < Obj_End; Tag++)
 	{
-		iter->Render();
+		for (auto iter : L_Obj[Tag])
+		{
+			if (iter->GetPos() != pos)
+			{
+
+				if (iter->GetPos().x < CAM->GetCamPos().x + WINSIZEX / 2 && iter->GetPos().x > CAM->GetCamPos().x - WINSIZEX / 2)
+				{
+					iter->Render();
+				}
+			}
+		}
 	}
 }
 
 void ObjectManager::UIRender()
 {
-	for (auto iter : L_Obj)
+	for (int Tag = 0; Tag < Obj_End; Tag++)
 	{
-		iter->UIRender();
+		for (auto iter : L_Obj[Tag])
+		{
+			iter->UIRender();
+		}
 	}
+	UIRENDER->TextDraw(to_string(Obj_End), Vec2(500, 100), 50, true, D3DCOLOR_XRGB(255, 255, 255));
+
 }
 
 void ObjectManager::Release()
 {
-	for (auto iter : L_Obj)
+	for (int Tag = 0; Tag < Obj_End; Tag++)
 	{
-		SAFE_DELETE(iter);
+		for (auto iter : L_Obj[Tag])
+		{
+			SAFE_DELETE(iter);
+		}
+		L_Obj[Tag].clear();
 	}
-	L_Obj.clear();
 }
